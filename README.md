@@ -1,10 +1,10 @@
-# PROJECT TITLE
+# Ona
 
 <img src="PATH/TO/PROJECT/LOGO" alt="PROJECT NAME logo" width="100"/>
 
 **Simple CLI for Ollama note taking.**
 
-![Ollama badge](https://img.shields.io/badge/Ollama-FFFFFF)
+![Ollama badge](https://img.shields.io/badge/Ollama-FFFFFF)  
 ![OpenJDK badge](https://img.shields.io/badge/OpenJDK-21.0.8-E76F00)
 
 Ona is a minimalist CLI for interacting with Ollama models for note taking and summarizing. I discovered that most of the features provided by [open-webui](https://github.com/open-webui/open-webui) were just bloat for my purposes, plus it felt wasteful to run a full 30GB Docker container just to hit an LLM with an occasional quick query. Thus, I created Ona.  
