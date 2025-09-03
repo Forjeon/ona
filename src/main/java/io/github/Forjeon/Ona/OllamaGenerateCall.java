@@ -1,7 +1,11 @@
 package io.github.Forjeon.Ona;
 
+import com.google.gson.Gson;
+
 public class OllamaGenerateCall implements IOllamaCall {
+    private final boolean stream = false;
     private final boolean think;
+    private final String format = "json";
     private final String model;
     private final String prompt;
 
@@ -13,6 +17,6 @@ public class OllamaGenerateCall implements IOllamaCall {
 
     @Override
     public String getJsonData() {
-        return "{\"stream\": false, \"format\": \"json\", \"model\":\"" + model + "\",\"prompt\":\"" + prompt + "\",\"think\":" + think + "}";
+        return new Gson().toJson(this);
     }
 }

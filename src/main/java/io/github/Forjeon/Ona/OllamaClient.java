@@ -5,6 +5,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
 
+import com.google.gson.Gson;
+
 public class OllamaClient {
     private final URI endpoint;
 
@@ -28,13 +30,7 @@ public class OllamaClient {
         System.out.println("Response body: " + response.body());
 
         // Manually parse JSON (very basic, not robust)
-        String body = response.body();
-        int nameIndex = body.indexOf("\"name\":\"");
-        if (nameIndex != -1) {
-            int start = nameIndex + 8;
-            int end = body.indexOf("\"", start);
-            String name = body.substring(start, end);
-            System.out.println("Extracted name: " + name);
-        }
+        OllamaResponse modelResponse = new Gson().fromJson(response.body(), OllamaResponse.class);
+        return modelResponse.response;
     }
 }

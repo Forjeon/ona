@@ -1,14 +1,15 @@
 package io.github.Forjeon.Ona;
 
+import java.net.URI;
 import java.nio.file.Path;
 
 import main.java.io.github.Forjeon.Ona.PromptTemplate;
 
 public class ConfigManager {
-    private final URI ollamaEndpoint;
+    private final Path inFilepath;  // Input file to read for prompt
 
-    public final Path inFilepath;  // Input file to read for prompt
-    public final PromptTemplate
+    public final URI ollamaEndpoint;
+    public final PromptTemplate;
 
     public ConfigManager(String[] args) {
         // TODO: Parse args to set fields
